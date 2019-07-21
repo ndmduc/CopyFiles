@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CopyFiles.CopyCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +17,22 @@ using System.Windows.Shapes;
 namespace CopyFiles
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Portal.xaml
     /// </summary>
-    public partial class MainWindow 
+    public partial class Portal : UserControl
     {
-        public MainWindow()
+        public Portal()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var copy = new FileStreamCopy();
+            copy.Copy(@"F:\Trailer", @"F:\Trailer01", (percentCopy, isCancel) =>
+            {
+                
+            }
         }
     }
 }
