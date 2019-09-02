@@ -29,10 +29,13 @@ namespace CopyFiles
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var copy = new FileStreamCopy();
-            copy.Copy(@"F:\Trailer", @"F:\Trailer01", (percentCopy, isCancel) =>
+            copy.Copy(@"F:\Wallpaper\oN2uZYz.jpg", @"F:\Wallpaper\1111oN2uZYz.jpg", (percentCopy, isCancel) =>
             {
-                
-            }
+                System.Diagnostics.Debug.WriteLine($"Process {percentCopy}");
+            }, () =>
+            {
+                System.Diagnostics.Debug.WriteLine("Complete");
+            });
         }
     }
 }
